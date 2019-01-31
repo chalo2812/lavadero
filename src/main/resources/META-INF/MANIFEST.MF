@@ -1,0 +1,1 @@
+Main-Class: ar.lavadero.cuenca.Main
