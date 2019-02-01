@@ -4,6 +4,10 @@ import javax.swing.*;
 import java.awt.*;
 import org.slf4j.*;
 
+/**
+ * Clase Principal con Applet
+ * @author gsola - Gonzalo Sola
+ */
 public class MainApplet extends JApplet {
 
     public static Logger logger = LoggerFactory.getLogger(MainApplet.class);

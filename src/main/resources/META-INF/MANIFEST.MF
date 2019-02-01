@@ -1,1 +1,1 @@
-Main-Class: ar.lavadero.MainApplet
+Main-Class: ar.lavadero.MainSwing

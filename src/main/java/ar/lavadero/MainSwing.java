@@ -5,6 +5,11 @@ import org.slf4j.*;
 import javax.swing.*;
 import java.awt.event.*;
 
+/**
+ * Clase Principal con Swing
+ * @author gsola - Gonzalo Sola
+ */
+
 public class MainSwing implements ActionListener {
 
     public static Logger logger = LoggerFactory.getLogger(MainSwing.class);
@@ -15,21 +20,22 @@ public class MainSwing implements ActionListener {
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         BarraMenu barraMenu = new BarraMenu();
 
-        Menu jmFile = new Menu("Archivos");
+        Menu menu = new Menu("Archivos");
         ItemMenu itemMenuAbrir = new ItemMenu("Abrir");
         ItemMenu itemMenuCerrar = new ItemMenu("Cerrar");
         ItemMenu itemMenuGuardar = new ItemMenu("Guardar");
         ItemMenu itemMenuSalir = new ItemMenu("Salir");
-        jmFile.add(itemMenuAbrir);
-        jmFile.add(itemMenuCerrar);
-        jmFile.add(itemMenuGuardar);
-        jmFile.addSeparator();
-        jmFile.add(itemMenuSalir);
+        menu.add(itemMenuAbrir);
+        menu.add(itemMenuCerrar);
+        menu.add(itemMenuGuardar);
+        menu.addSeparator();
+        menu.add(itemMenuSalir);
         itemMenuAbrir.addActionListener(this);
         itemMenuCerrar.addActionListener(this);
         itemMenuGuardar.addActionListener(this);
         itemMenuSalir.addActionListener(this);
-        barraMenu.add(jmFile);
+
+        barraMenu.add(menu);
 
         /*JMenu jmOptions = new JMenu("Options");
         JMenu a = new JMenu("A");
