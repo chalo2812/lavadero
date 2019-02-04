@@ -1,7 +1,7 @@
 package ar.lavadero;
 
 import ar.lavadero.components.*;
-import org.slf4j.*;
+//import org.slf4j.*;
 import javax.swing.*;
 import java.awt.event.*;
 
@@ -12,7 +12,7 @@ import java.awt.event.*;
 
 public class MainSwing implements ActionListener {
 
-    public static Logger logger = LoggerFactory.getLogger(MainSwing.class);
+  //  public static Logger logger = LoggerFactory.getLogger(MainSwing.class);
 
     public MainSwing() {
         Cuadro f = new Cuadro("Lavadero 1.0 Swing");
@@ -69,7 +69,7 @@ public class MainSwing implements ActionListener {
     }
     public void actionPerformed(ActionEvent ae) {
         String comStr = ae.getActionCommand();
-        logger.info(comStr + " Selected");
+        //logger.info(comStr + " Selected");
     }
     public static void main(String args[]) {
         new MainSwing();

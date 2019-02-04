@@ -32,7 +32,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>ar.lavadero.MainApplet</mainClass>
+                            <mainClass>ar.lavadero.MainSwing</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
