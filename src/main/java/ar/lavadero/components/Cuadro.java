@@ -12,4 +12,8 @@ public class Cuadro extends JFrame {
         super(nombre);
     }
 
+    public void asignarCuadro(BarraMenu barraMenu) {
+        this.setJMenuBar(barraMenu);
+    }
+
 }
