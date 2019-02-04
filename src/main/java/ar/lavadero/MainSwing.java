@@ -61,6 +61,7 @@ public class MainSwing extends JFrame implements ActionListener {
         f.asignarCuadro(barraMenu);
         f.setVisible(true);
     }
+
     public static void main(String args[]) {
         new MainSwing();
     }
