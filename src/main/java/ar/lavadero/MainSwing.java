@@ -2,7 +2,7 @@ package ar.lavadero;
 
 import ar.lavadero.components.*;
 import ar.lavadero.components.Menu;
-import org.slf4j.*;
+//import org.slf4j.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -14,7 +14,7 @@ import java.awt.event.*;
 
 public class MainSwing extends JFrame implements ActionListener {
 
-    public static Logger logger = LoggerFactory.getLogger(MainSwing.class);
+    //public static Logger logger = LoggerFactory.getLogger(MainSwing.class);
 
     public MainSwing() {
 
@@ -35,27 +35,16 @@ public class MainSwing extends JFrame implements ActionListener {
         itemMenuAbrir.addActionListener(this);
         itemMenuGuardar.addActionListener(this);
         itemMenuSalir.addActionListener(this);
-
         barraMenu.add(menu);
-        Menu a = new Menu("A");
-        ItemMenu b = new ItemMenu("B");
-        ItemMenu c = new ItemMenu("C");
-        ItemMenu d = new ItemMenu("D");
-        a.add(b);
-        a.add(c);
-        a.add(d);
 
         Menu ayuda = new Menu("Ayuda");
         ItemMenu acercaDe = new ItemMenu("Acerca de");
-        ayuda.add(acercaDe);
+        ayuda.agregar(acercaDe);
         barraMenu.add(ayuda);
 
         itemMenuAbrir.addActionListener(this);
         itemMenuGuardar.addActionListener(this);
         itemMenuSalir.addActionListener(this);
-        b.addActionListener(this);
-        c.addActionListener(this);
-        d.addActionListener(this);
         acercaDe.addActionListener(this);
 
         f.asignarCuadro(barraMenu);
