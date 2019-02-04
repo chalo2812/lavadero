@@ -12,6 +12,7 @@ public class Menu extends JMenu {
         super(nombre);
     }
 
+
     public void agregar(ItemMenu itemMenuAbrir) {
         this.add(itemMenuAbrir);
     }
@@ -19,4 +20,5 @@ public class Menu extends JMenu {
     public void agregarSeparador() {
         this.addSeparator();
     }
+
 }

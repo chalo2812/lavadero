@@ -2,6 +2,7 @@ package ar.lavadero;
 
 import ar.lavadero.components.*;
 import ar.lavadero.components.Menu;
+import org.slf4j.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -12,6 +13,8 @@ import java.awt.event.*;
  */
 
 public class MainSwing extends JFrame implements ActionListener {
+
+    public static Logger logger = LoggerFactory.getLogger(MainSwing.class);
 
     public MainSwing() {
 
