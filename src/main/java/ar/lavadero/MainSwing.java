@@ -2,7 +2,9 @@ package ar.lavadero;
 
 import ar.lavadero.components.*;
 //import org.slf4j.*;
+import ar.lavadero.components.Menu;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
 
 /**
@@ -10,42 +12,55 @@ import java.awt.event.*;
  * @author gsola - Gonzalo Sola
  */
 
-public class MainSwing implements ActionListener {
+public class MainSwing extends JFrame implements ActionListener {
 
-  //  public static Logger logger = LoggerFactory.getLogger(MainSwing.class);
+    //public static Logger logger = LoggerFactory.getLogger(MainSwing.class);
 
     public MainSwing() {
         Cuadro f = new Cuadro("Lavadero 1.0 Swing");
-        f.setSize(800, 800);
+        f.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        f.setMinimumSize(new Dimension(400,400));
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        BarraMenu barraMenu = new BarraMenu();
 
+        BarraMenu barraMenu = new BarraMenu();
         Menu menu = new Menu("Archivos");
         ItemMenu itemMenuAbrir = new ItemMenu("Abrir");
-        ItemMenu itemMenuCerrar = new ItemMenu("Cerrar");
         ItemMenu itemMenuGuardar = new ItemMenu("Guardar");
         ItemMenu itemMenuSalir = new ItemMenu("Salir");
-        menu.add(itemMenuAbrir);
-        menu.add(itemMenuCerrar);
-        menu.add(itemMenuGuardar);
-        menu.addSeparator();
-        menu.add(itemMenuSalir);
+        menu.agregar(itemMenuAbrir);
+        menu.agregar(itemMenuGuardar);
+        menu.agregarSeparador();
+        menu.agregar(itemMenuSalir);
         itemMenuAbrir.addActionListener(this);
-        itemMenuCerrar.addActionListener(this);
         itemMenuGuardar.addActionListener(this);
         itemMenuSalir.addActionListener(this);
-
         barraMenu.add(menu);
 
-        f.setJMenuBar(barraMenu);
+        Menu ayuda = new Menu("Ayuda");
+        ItemMenu acercaDe = new ItemMenu("Acerca de");
+        ayuda.agregar(acercaDe);
+        barraMenu.add(ayuda);
+
+        itemMenuAbrir.addActionListener(this);
+        itemMenuGuardar.addActionListener(this);
+        itemMenuSalir.addActionListener(this);
+        acercaDe.addActionListener(this);
+
+        f.asignarCuadro(barraMenu);
         f.setVisible(true);
     }
-    public void actionPerformed(ActionEvent ae) {
-        String comStr = ae.getActionCommand();
-        //logger.info(comStr + " Selected");
-    }
+
     public static void main(String args[]) {
         new MainSwing();
     }
 
+    public void actionPerformed(ActionEvent ae) {
+        String comStr = ae.getActionCommand();
+        if (comStr.equals("Salir")) {
+            System.exit(0);
+        }
+        /*else if (comStr.equals("Abrir")) {
+            JOptionPane.showMessageDialog(this,"You hit Open");
+        }*/
+    }
 }
