@@ -1,11 +1,13 @@
 package ar.lavadero;
 
 import ar.lavadero.components.*;
-//import org.slf4j.*;
+import org.slf4j.*;
 import ar.lavadero.components.Menu;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.image.ImageObserver;
+import java.awt.image.ImageProducer;
 
 /**
  * Clase Principal con Swing
@@ -14,14 +16,14 @@ import java.awt.event.*;
 
 public class MainSwing extends JFrame implements ActionListener {
 
-    //public static Logger logger = LoggerFactory.getLogger(MainSwing.class);
+    public static Logger logger = LoggerFactory.getLogger(MainSwing.class);
 
     public MainSwing() {
         Cuadro f = new Cuadro("Lavadero 1.0 Swing");
         f.setExtendedState(JFrame.MAXIMIZED_BOTH);
         f.setMinimumSize(new Dimension(400,400));
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+        ImageIcon logo = new ImageIcon("/opt/codigoFuenteMio/demo1/lavadero/src/main/assets/lavarropa.png");
         BarraMenu barraMenu = new BarraMenu();
         Menu menu = new Menu("Archivos");
         ItemMenu itemMenuAbrir = new ItemMenu("Abrir");
@@ -47,6 +49,7 @@ public class MainSwing extends JFrame implements ActionListener {
         acercaDe.addActionListener(this);
 
         f.asignarCuadro(barraMenu);
+        f.setIconImage(logo.getImage());
         f.setVisible(true);
     }
 
@@ -58,9 +61,13 @@ public class MainSwing extends JFrame implements ActionListener {
         String comStr = ae.getActionCommand();
         if (comStr.equals("Salir")) {
             System.exit(0);
+        } else if (comStr.equals("Acerca de")) {
+            logger.info("Acerca de");
+            Ayuda cuadroAyuda = new Ayuda("Ayuda");
+            cuadroAyuda.crearAyuda(cuadroAyuda);
+            ImageIcon logo = new ImageIcon("/opt/codigoFuenteMio/demo1/lavadero/src/main/assets/lavarropa1.png");
+            cuadroAyuda.setIconImage(logo.getImage());
+            cuadroAyuda.setVisible(true);
         }
-        /*else if (comStr.equals("Abrir")) {
-            JOptionPane.showMessageDialog(this,"You hit Open");
-        }*/
     }
 }

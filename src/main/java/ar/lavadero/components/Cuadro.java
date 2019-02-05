@@ -16,4 +16,8 @@ public class Cuadro extends JFrame {
         this.setJMenuBar(barraMenu);
     }
 
+    public ImageIcon setIconImage(ImageIcon imageIcon) {
+        ImageIcon obj = new ImageIcon();
+        return obj;
+    }
 }
