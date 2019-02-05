@@ -37,33 +37,6 @@ public class MainSwing implements ActionListener {
 
         barraMenu.add(menu);
 
-        /*JMenu jmOptions = new JMenu("Options");
-        JMenu a = new JMenu("A");
-        JMenuItem b = new JMenuItem("B");
-        JMenuItem c = new JMenuItem("C");
-        JMenuItem d = new JMenuItem("D");
-        a.add(b);
-        a.add(c);
-        a.add(d);
-        jmOptions.add(a);
-        JMenu e = new JMenu("E");
-        e.add(new JMenuItem("F"));
-        e.add(new JMenuItem("G"));
-        jmOptions.add(e);
-        jmb.add(jmOptions);
-        JMenu jmHelp = new JMenu("Help");
-        JMenuItem jmiAbout = new JMenuItem("About");
-        jmHelp.add(jmiAbout);
-        jmb.add(jmHelp);
-        jmiOpen.addActionListener(this);
-        jmiClose.addActionListener(this);
-        jmiSave.addActionListener(this);
-        jmiExit.addActionListener(this);
-        b.addActionListener(this);
-        c.addActionListener(this);
-        d.addActionListener(this);
-        jmiAbout.addActionListener(this);*/
-
         f.setJMenuBar(barraMenu);
         f.setVisible(true);
     }
