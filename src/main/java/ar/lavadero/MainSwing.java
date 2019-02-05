@@ -2,12 +2,10 @@ package ar.lavadero;
 
 import ar.lavadero.components.*;
 import org.slf4j.*;
-import ar.lavadero.components.Menu;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.awt.image.ImageObserver;
-import java.awt.image.ImageProducer;
+import java.net.URI;
 
 /**
  * Clase Principal con Swing
@@ -23,9 +21,10 @@ public class MainSwing extends JFrame implements ActionListener {
         f.setExtendedState(JFrame.MAXIMIZED_BOTH);
         f.setMinimumSize(new Dimension(400,400));
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        ImageIcon logo = new ImageIcon("/opt/codigoFuenteMio/demo1/lavadero/src/main/assets/lavarropa.png");
+        ImageIcon logo = new ImageIcon("/opt/codigoFuenteMio/demo1/lavadero/src/main/" +
+                "assets/lavarropa.png");
         BarraMenu barraMenu = new BarraMenu();
-        Menu menu = new Menu("Archivos");
+        ar.lavadero.components.Menu menu = new ar.lavadero.components.Menu("Archivos");
         ItemMenu itemMenuAbrir = new ItemMenu("Abrir");
         ItemMenu itemMenuGuardar = new ItemMenu("Guardar");
         ItemMenu itemMenuSalir = new ItemMenu("Salir");
@@ -38,7 +37,13 @@ public class MainSwing extends JFrame implements ActionListener {
         itemMenuSalir.addActionListener(this);
         barraMenu.add(menu);
 
-        Menu ayuda = new Menu("Ayuda");
+        ar.lavadero.components.Menu facturacion = new ar.lavadero.components.Menu("Facturación");
+        ItemMenu comprobante = new ItemMenu("Comprobante");
+        facturacion.agregar(comprobante);
+        comprobante.addActionListener(this);
+        barraMenu.add(facturacion);
+
+        ar.lavadero.components.Menu ayuda = new ar.lavadero.components.Menu("Ayuda");
         ItemMenu acercaDe = new ItemMenu("Acerca de");
         ayuda.agregar(acercaDe);
         barraMenu.add(ayuda);
@@ -62,12 +67,19 @@ public class MainSwing extends JFrame implements ActionListener {
         if (comStr.equals("Salir")) {
             System.exit(0);
         } else if (comStr.equals("Acerca de")) {
-            logger.info("Acerca de");
             Ayuda cuadroAyuda = new Ayuda("Ayuda");
             cuadroAyuda.crearAyuda(cuadroAyuda);
-            ImageIcon logo = new ImageIcon("/opt/codigoFuenteMio/demo1/lavadero/src/main/assets/lavarropa1.png");
+            ImageIcon logo = new ImageIcon("/opt/codigoFuenteMio/demo1/lavadero/src/main/assets/" +
+                    "lavarropa1.png");
             cuadroAyuda.setIconImage(logo.getImage());
             cuadroAyuda.setVisible(true);
+        } else if (comStr.equals("Comprobante")){
+            try {
+                Desktop.getDesktop().browse(new URI("https://auth.afip.gob.ar/contribuyente_/" +
+                        "login.xhtml"));
+            } catch (Exception e) {
+                logger.error(e.getStackTrace().toString());
+            }
         }
     }
 }
