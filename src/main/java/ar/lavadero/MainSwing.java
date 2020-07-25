@@ -1,7 +1,6 @@
 package ar.lavadero;
 
 import ar.lavadero.components.*;
-import org.slf4j.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -13,8 +12,6 @@ import java.net.URI;
  */
 
 public class MainSwing extends JFrame implements ActionListener {
-
-    public static Logger logger = LoggerFactory.getLogger(MainSwing.class);
 
     public MainSwing() {
         Cuadro f = new Cuadro("Lavadero 1.0 Swing");
@@ -75,10 +72,8 @@ public class MainSwing extends JFrame implements ActionListener {
             cuadroAyuda.setVisible(true);
         } else if (comStr.equals("Comprobante")){
             try {
-                Desktop.getDesktop().browse(new URI("https://auth.afip.gob.ar/contribuyente_/" +
-                        "login.xhtml"));
+                Desktop.getDesktop().browse(new URI("https://auth.afip.gob.ar/contribuyente_/login.xhtml"));
             } catch (Exception e) {
-                logger.error(e.getStackTrace().toString());
             }
         }
     }
