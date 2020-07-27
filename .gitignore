@@ -7,3 +7,5 @@ output.log
 client/dist
 client/node_modules
 client/package-lock.json
+swing/target
+server/target
