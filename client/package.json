@@ -6,8 +6,7 @@
   "author": "",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "build": "vue-cli-service build"
   },
   "main": "index.js",
   "dependencies": {
@@ -17,7 +16,6 @@
     "core-js": "^3.6.5",
     "jquery": "^3.5.1",
     "vue": "^2.6.11",
-    "vue-cli": "^2.9.6",
     "webpack": "^4.44.0"
   },
   "devDependencies": {
