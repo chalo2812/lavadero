@@ -1,0 +1,5 @@
+public
+Dockerfile
+package-lock.json
+README.md
+node_modules/**
