@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <b-navbar toggleable="lg">
-      <b-button v-b-toggle.my-sidebar>
-
+      <b-button v-b-toggle.my-sidebar variant="primary">
+				Menu
       </b-button>
     </b-navbar>
     <b-sidebar id="my-sidebar" title="Sidebar" >
