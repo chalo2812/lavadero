@@ -2,21 +2,20 @@
   <div id="app">
     <b-navbar toggleable="lg">
       <b-button v-b-toggle.my-sidebar variant="primary">
-				<b-icon icon="gear-fill" aria-hidden="true" animation="pulse" />
-				Menu
+				<b-icon class="fa fa-bars" aria-hidden="true"></b-icon>
       </b-button>
     </b-navbar>
-    <b-sidebar id="my-sidebar" class="col-2" >
-      <div class="px-6 py-3">
-        Lista.
-      </div>
+    <b-sidebar id="my-sidebar" style="no-border">
+			<router-link to="/hello">Go to Hello World</router-link><br>
+      <router-link to="/">Go to Bar</router-link>
     </b-sidebar>
   </div>
 </template>
 
 <script>
+
 export default {
-  name: 'App',
+  name: 'Menu',
   components: {}
 }
 </script>
