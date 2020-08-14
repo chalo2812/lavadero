@@ -1,17 +1,25 @@
 <template>
   <div id="app">
-    <b-navbar toggleable="lg">
-      <b-button v-b-toggle.my-sidebar variant="primary">
-				<b-icon icon="gear-fill" aria-hidden="true" animation="pulse" />
-				Menu
-      </b-button>
-    </b-navbar>
-    <b-sidebar id="my-sidebar" class="col-2" >
-      <div class="px-6 py-3">
-        Lista.
-      </div>
-    </b-sidebar>
-  </div>
+		<b-navbar toggleable="lg" type="dark" variant="info">
+			<b-navbar-brand href="#">
+				<b-avatar variant="secondary"></b-avatar>
+			</b-navbar-brand>
+
+			<b-collapse id="nav-collapse" is-nav>
+				<b-navbar-nav class="ml-auto">
+					<b-img thumbnail fluid src="https://picsum.photos/64/64/?image=1"></b-img>
+				</b-navbar-nav>
+				<b-navbar-nav class="ml-auto">
+					<b-nav-item-dropdown right>
+						<b-dropdown-item href="/login">
+							<b-avatar variant="secondary"></b-avatar>
+						</b-dropdown-item>
+						<b-dropdown-item href="#">Sign Out</b-dropdown-item>
+					</b-nav-item-dropdown>
+				</b-navbar-nav>
+			</b-collapse>
+		</b-navbar>
+	</div>
 </template>
 
 <script>
