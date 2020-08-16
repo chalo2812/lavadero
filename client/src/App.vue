@@ -1,35 +1,33 @@
 <template>
-  <div id="app">
-		<b-navbar toggleable="lg" type="dark" variant="info">
-			<b-navbar-brand href="#">
-				<b-avatar variant="secondary"></b-avatar>
-			</b-navbar-brand>
-			<b-collapse id="nav-collapse" is-nav>
-				<b-navbar-nav class="ml-auto">
-					<b-img thumbnail fluid src="https://picsum.photos/64/64/?image=1"></b-img>
-				</b-navbar-nav>
-				<b-navbar-nav class="ml-auto">
-					<b-nav-item-dropdown right>
-						<b-dropdown-item href="/login">
-							<b-avatar variant="secondary"></b-avatar>
-						</b-dropdown-item>
-						<b-dropdown-item href="#">Sign Out</b-dropdown-item>
-					</b-nav-item-dropdown>
-				</b-navbar-nav>
-			</b-collapse>
+  <div id="app" >
+		<b-navbar toggleable="lg" type="dark" variant="info" style="height:90px">
 		</b-navbar>
-		<Home ></Home>
+		<Slide>
+      <a id="app" href="#/">
+        <span>Home</span>
+      </a>
+      <a id="menu" href="#/menu">
+        <span>Menu</span>
+      </a>
+      <a id="account" href="#/account">
+        <span>Cuenta</span>
+        <b-avatar variant="dark" style="background-color: #3f3f41"></b-avatar>
+      </a>
+    </Slide>
+		<Home></Home>
 	</div>
 
 </template>
 
 <script>
 import Home from './components/Home.vue'
+import { Slide } from 'vue-burger-menu'
 
 export default {
   name: 'App',
   components: {
-    Home
+    Home,
+    Slide
   }
 }
 </script>

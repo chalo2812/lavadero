@@ -3,9 +3,7 @@ import VueRouter from 'vue-router'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BootstrapVue, IconsPlugin}  from 'bootstrap-vue'
 import App from './App.vue'
-import HelloWorld from './components/HelloWorld.vue'
 import Menu from './components/Menu.vue'
-
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
@@ -24,7 +22,6 @@ const router = new VueRouter({
   mode: 'history',
   routes: [
     { path: '/', component: App },
-    { path: '/hello', component: HelloWorld },
     { path: '/menu', component: Menu }
   ]
 })
