@@ -9,3 +9,6 @@ client/node_modules
 client/package-lock.json
 swing/target
 server/target
+client/target/**
+client/node/**
+/client/target/maven-archiver/*
